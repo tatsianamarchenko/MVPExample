@@ -29,12 +29,18 @@ class SelectedWordViewController: UIViewController, SelectedWordViewProtocol {
 	
 	private lazy var meaningLable: UILabel = {
 		var label = UILabel()
+		label.lineBreakMode = .byCharWrapping
+		label.numberOfLines = 0
+		label.lineBreakStrategy = .pushOut
 		label.translatesAutoresizingMaskIntoConstraints = false
 		return label
 	}()
 	
 	private lazy var exampleLable: UILabel = {
 		var label = UILabel()
+		label.lineBreakMode = .byCharWrapping
+		label.numberOfLines = 0
+		label.lineBreakStrategy = .pushOut
 		label.translatesAutoresizingMaskIntoConstraints = false
 		return label
 	}()
@@ -72,11 +78,11 @@ class SelectedWordViewController: UIViewController, SelectedWordViewProtocol {
 			transcriptionLable.topAnchor.constraint(equalTo: soundButton.bottomAnchor, constant: 10),
 			
 			meaningLable.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-			meaningLable.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+			meaningLable.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
 			meaningLable.topAnchor.constraint(equalTo: transcriptionLable.bottomAnchor, constant: 10),
 			
 			exampleLable.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-			exampleLable.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+			exampleLable.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
 			exampleLable.topAnchor.constraint(equalTo: meaningLable.bottomAnchor, constant: 10),
 		])
 	}
