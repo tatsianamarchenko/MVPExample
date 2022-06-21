@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct ErrorModel: Codable {
+	let title, message, resolution: String
+}
