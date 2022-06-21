@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF0428DE2862419F00DC5BB7 /* SelectedWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0428DD2862419F00DC5BB7 /* SelectedWordViewController.swift */; };
+		BF0428E0286241E800DC5BB7 /* SelectedWordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0428DF286241E800DC5BB7 /* SelectedWordPresenter.swift */; };
+		BFBD0CAB28625D9600A5CADF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD0CAA28625D9600A5CADF /* Router.swift */; };
 		BFC61A312861E8CF0079069D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC61A302861E8CF0079069D /* AppDelegate.swift */; };
 		BFC61A332861E8CF0079069D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC61A322861E8CF0079069D /* SceneDelegate.swift */; };
 		BFC61A352861E8CF0079069D /* SearchWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC61A342861E8CF0079069D /* SearchWordViewController.swift */; };
@@ -20,9 +23,14 @@
 		BFC61A4E286201B10079069D /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC61A4D286201B10079069D /* DataFetcherService.swift */; };
 		BFC61A52286203E50079069D /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC61A51286203E50079069D /* WordModel.swift */; };
 		BFC61A5428620D610079069D /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC61A5328620D610079069D /* ErrorModel.swift */; };
+		BFC61A56286219E20079069D /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC61A55286219E20079069D /* ModuleBuilder.swift */; };
+		BFC61A5A286228280079069D /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC61A59286228280079069D /* MainViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF0428DD2862419F00DC5BB7 /* SelectedWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedWordViewController.swift; sourceTree = "<group>"; };
+		BF0428DF286241E800DC5BB7 /* SelectedWordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedWordPresenter.swift; sourceTree = "<group>"; };
+		BFBD0CAA28625D9600A5CADF /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		BFC61A2D2861E8CF0079069D /* DictionaryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DictionaryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC61A302861E8CF0079069D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC61A322861E8CF0079069D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +46,8 @@
 		BFC61A4D286201B10079069D /* DataFetcherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
 		BFC61A51286203E50079069D /* WordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
 		BFC61A5328620D610079069D /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		BFC61A55286219E20079069D /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		BFC61A59286228280079069D /* MainViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF0428D828623FC600DC5BB7 /* MVP */ = {
+			isa = PBXGroup;
+			children = (
+				BFC61A55286219E20079069D /* ModuleBuilder.swift */,
+				BFBD0CAA28625D9600A5CADF /* Router.swift */,
+				BF0428DA2862407100DC5BB7 /* SelectedWord */,
+				BF0428D928623FCD00DC5BB7 /* MainScene */,
+			);
+			path = MVP;
+			sourceTree = "<group>";
+		};
+		BF0428D928623FCD00DC5BB7 /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				BFC61A50286203D40079069D /* Model */,
+				BFC61A57286226C00079069D /* View */,
+				BFC61A58286226DA0079069D /* Presenter */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
+		BF0428DA2862407100DC5BB7 /* SelectedWord */ = {
+			isa = PBXGroup;
+			children = (
+				BF0428DB2862408700DC5BB7 /* View */,
+				BF0428DC2862408D00DC5BB7 /* Presenter */,
+			);
+			path = SelectedWord;
+			sourceTree = "<group>";
+		};
+		BF0428DB2862408700DC5BB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF0428DD2862419F00DC5BB7 /* SelectedWordViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF0428DC2862408D00DC5BB7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BF0428DF286241E800DC5BB7 /* SelectedWordPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		BFC61A242861E8CF0079069D = {
 			isa = PBXGroup;
 			children = (
@@ -70,12 +126,10 @@
 		BFC61A2F2861E8CF0079069D /* DictionaryApp */ = {
 			isa = PBXGroup;
 			children = (
-				BFC61A4F286203290079069D /* Manager */,
-				BFC61A50286203D40079069D /* Model */,
+				BF0428D828623FC600DC5BB7 /* MVP */,
+				BFC61A4F286203290079069D /* Managers */,
 				BFC61A302861E8CF0079069D /* AppDelegate.swift */,
 				BFC61A322861E8CF0079069D /* SceneDelegate.swift */,
-				BFC61A342861E8CF0079069D /* SearchWordViewController.swift */,
-				BFC61A472861FF050079069D /* WordPresenter.swift */,
 				BFC61A362861E8CF0079069D /* Main.storyboard */,
 				BFC61A3C2861E8D20079069D /* Assets.xcassets */,
 				BFC61A3E2861E8D20079069D /* LaunchScreen.storyboard */,
@@ -85,14 +139,14 @@
 			path = DictionaryApp;
 			sourceTree = "<group>";
 		};
-		BFC61A4F286203290079069D /* Manager */ = {
+		BFC61A4F286203290079069D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				BFC61A49286201990079069D /* NetworkDataFetcher.swift */,
-				BFC61A4D286201B10079069D /* DataFetcherService.swift */,
 				BFC61A4A286201990079069D /* NetworkService.swift */,
+				BFC61A4D286201B10079069D /* DataFetcherService.swift */,
 			);
-			path = Manager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		BFC61A50286203D40079069D /* Model */ = {
@@ -102,6 +156,23 @@
 				BFC61A5328620D610079069D /* ErrorModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BFC61A57286226C00079069D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BFC61A342861E8CF0079069D /* SearchWordViewController.swift */,
+				BFC61A59286228280079069D /* MainViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BFC61A58286226DA0079069D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BFC61A472861FF050079069D /* WordPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,13 +247,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFC61A5428620D610079069D /* ErrorModel.swift in Sources */,
+				BF0428E0286241E800DC5BB7 /* SelectedWordPresenter.swift in Sources */,
 				BFC61A4B286201990079069D /* NetworkDataFetcher.swift in Sources */,
 				BFC61A52286203E50079069D /* WordModel.swift in Sources */,
 				BFC61A352861E8CF0079069D /* SearchWordViewController.swift in Sources */,
+				BFC61A56286219E20079069D /* ModuleBuilder.swift in Sources */,
+				BFC61A5A286228280079069D /* MainViewCell.swift in Sources */,
+				BFBD0CAB28625D9600A5CADF /* Router.swift in Sources */,
 				BFC61A482861FF050079069D /* WordPresenter.swift in Sources */,
 				BFC61A3B2861E8CF0079069D /* DictionaryApp.xcdatamodeld in Sources */,
 				BFC61A312861E8CF0079069D /* AppDelegate.swift in Sources */,
 				BFC61A332861E8CF0079069D /* SceneDelegate.swift in Sources */,
+				BF0428DE2862419F00DC5BB7 /* SelectedWordViewController.swift in Sources */,
 				BFC61A4C286201990079069D /* NetworkService.swift in Sources */,
 				BFC61A4E286201B10079069D /* DataFetcherService.swift in Sources */,
 			);
