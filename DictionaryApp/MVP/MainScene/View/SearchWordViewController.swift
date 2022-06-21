@@ -9,6 +9,7 @@ import UIKit
 
 protocol SearchWordViewProtocol: AnyObject {
 	func showWord(searchResult: [WordModel])
+	func showError(searchResult: ErrorModel)
 }
 
 class SearchWordViewController: UIViewController, SearchWordViewProtocol {
@@ -42,6 +43,13 @@ class SearchWordViewController: UIViewController, SearchWordViewProtocol {
 	func showWord(searchResult: [WordModel]) {
 		self.words = searchResult
 		self.table.reloadData()
+	}
+
+	func showError(searchResult: ErrorModel) {
+		let alert = UIAlertController(title: searchResult.title, message: searchResult.message, preferredStyle: .actionSheet)
+		let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+		alert.addAction(cancel)
+		present(alert, animated: true)
 	}
 	
 	private func setupSearchBar() {

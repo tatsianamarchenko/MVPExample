@@ -30,6 +30,12 @@ class WordPresenter: WordPresenterProtocol {
 	func findWord(word: String) {
 		dataFetcherService.fetchNewWord(word: word) { [weak self] word in
 			guard let word = word else {
+				self?.dataFetcherService.fetchErrorMessage() { [weak self] errorMessage in
+					guard let errorMessage = errorMessage else {
+						return
+					}
+					self?.view?.showError(searchResult: errorMessage)
+				}
 				return
 			}
 			let utterance = AVSpeechUtterance(string: word.first?.word ?? "no word")
@@ -38,7 +44,7 @@ class WordPresenter: WordPresenterProtocol {
 			self?.view?.showWord(searchResult: word)
 		}
 	}
-	
+
 	func selectWord(word: WordModel) {
 		router?.showInfo(word: word)
 	}
